@@ -17,12 +17,13 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
+            --primary: #1e40af;
+            --secondary: #1e3a8a;
             --accent: #3b82f6;
-            --light: #f8fafc;
+            --light: #f0f9ff;
             --dark: #1e293b;
             --text: #334155;
+            --gradient: linear-gradient(135deg, #1e40af, #3b82f6);
         }
 
         body {
@@ -35,13 +36,14 @@
         .top-contact-bar {
             background: var(--dark);
             color: white;
-            padding: 10px 5%;
+            padding: 12px 5%;
             text-align: center;
             font-size: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            border-bottom: 3px solid var(--primary);
         }
 
         .contact-info-top {
@@ -57,7 +59,7 @@
         }
 
         .contact-info-top i {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         .whatsapp-float {
@@ -85,14 +87,14 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--gradient);
             color: white;
             padding: 1rem 5%;
             position: sticky;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
         }
 
         .navbar {
@@ -111,6 +113,7 @@
         .logo i {
             margin-right: 10px;
             font-size: 2rem;
+            color: #fbbf24;
         }
 
         .nav-links {
@@ -127,10 +130,13 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 25px;
         }
 
         .nav-links a:hover {
-            color: #e0f2fe;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .mobile-menu {
@@ -143,10 +149,10 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(30, 64, 175, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            height: 85vh;
             display: flex;
             align-items: center;
             color: white;
@@ -161,21 +167,23 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
             background-color: white;
             color: var(--primary);
-            padding: 14px 35px;
+            padding: 16px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -184,62 +192,78 @@
             cursor: pointer;
             font-size: 1.1rem;
             margin: 0 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-primary {
-            background-color: var(--primary);
-            color: white;
+            background-color: #fbbf24;
+            color: var(--dark);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         section {
-            padding: 4rem 5%;
+            padding: 5rem 5%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--dark);
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
 
         .section-title p {
             max-width: 700px;
-            margin: 0 auto;
+            margin: 1.5rem auto 0;
             color: var(--text);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .services {
-            background-color: #f1f5f9;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
         }
 
         .service-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
         }
 
         .service-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
+            border: 1px solid #e2e8f0;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
         }
 
         .service-img {
@@ -247,12 +271,13 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.3s ease;
-            background-color: #e2e8f0;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text);
-            font-size: 1.1rem;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .service-card:hover .service-img {
@@ -260,79 +285,111 @@
         }
 
         .service-content {
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
             background: white;
         }
 
         .service-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
             color: var(--dark);
         }
 
         .service-content p {
             color: var(--text);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         .service-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .service-features li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: 1.1rem;
         }
 
         .service-features i {
             color: var(--primary);
+            background: #dbeafe;
+            padding: 8px;
+            border-radius: 50%;
         }
 
         .service-price {
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            top: -20px;
-            right: 20px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        }
-
-        .upload-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .upload-btn {
-            background: var(--primary);
+            background: var(--gradient);
             color: white;
             padding: 12px 25px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin: 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            top: -20px;
+            right: 25px;
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
         }
 
-        .upload-btn:hover {
-            background: var(--secondary);
+        .booking-form {
+            background: white;
+            padding: 5rem 5%;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         .gallery {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient);
             color: white;
         }
 
@@ -343,29 +400,31 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .gallery-item {
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             position: relative;
-            height: 250px;
-            background: #e2e8f0;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text);
-            font-size: 1.1rem;
+            color: white;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
         }
 
         .gallery-img {
@@ -385,13 +444,13 @@
         }
 
         .upload-placeholder i {
-            font-size: 3rem;
-            color: var(--primary);
+            font-size: 3.5rem;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1rem;
         }
 
         .how-it-works {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
             text-align: center;
         }
@@ -410,90 +469,113 @@
 
         .step {
             flex: 1;
-            min-width: 220px;
-            margin: 1rem;
-            padding: 2rem 1rem;
+            min-width: 240px;
+            margin: 1.5rem;
+            padding: 2.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .step-number {
             display: inline-block;
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: white;
             color: var(--primary);
             border-radius: 50%;
-            line-height: 70px;
-            font-size: 1.8rem;
+            line-height: 80px;
+            font-size: 2rem;
             font-weight: bold;
             margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            opacity: 0.9;
+            font-size: 1.1rem;
         }
 
         .contact-info {
             background: var(--dark);
             color: white;
-            padding: 5rem 5%;
+            padding: 6rem 5%;
             text-align: center;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .contact-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--accent);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-card:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            border-left-color: #fbbf24;
         }
 
         .contact-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
             color: white;
         }
 
         .contact-card p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             color: #cbd5e1;
             font-size: 1.1rem;
         }
 
         .contact-card .phone {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: white;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            display: block;
         }
 
         footer {
             background: #0f172a;
             color: white;
-            padding: 3rem 5% 1rem;
+            padding: 4rem 5% 2rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-column h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
 
         .footer-column h3::after {
@@ -502,8 +584,9 @@
             left: 0;
             bottom: 0;
             width: 50px;
-            height: 2px;
-            background: var(--primary);
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .footer-links {
@@ -511,56 +594,60 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
             color: #cbd5e1;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a:hover {
             color: white;
-            padding-left: 5px;
+            padding-left: 8px;
         }
 
         .social-icons {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
             transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .social-icons a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
+            background: var(--accent);
+            transform: translateY(-5px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #94a3b8;
         }
 
         @media (max-width: 768px) {
             .top-contact-bar {
                 flex-direction: column;
-                gap: 10px;
-                padding: 10px 5%;
+                gap: 12px;
+                padding: 12px 5%;
             }
 
             .contact-info-top {
@@ -575,7 +662,7 @@
                 width: 100%;
                 background: var(--secondary);
                 flex-direction: column;
-                padding: 1rem 0;
+                padding: 1.5rem 0;
             }
 
             .nav-links.active {
@@ -585,7 +672,7 @@
             .nav-links li {
                 margin: 0;
                 text-align: center;
-                padding: 0.8rem 0;
+                padding: 1rem 0;
             }
 
             .mobile-menu {
@@ -593,11 +680,11 @@
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .steps {
@@ -605,10 +692,10 @@
             }
 
             .btn {
-                margin: 5px;
+                margin: 8px;
                 display: block;
-                width: 250px;
-                margin: 10px auto;
+                width: 280px;
+                margin: 12px auto;
             }
 
             .service-cards {
@@ -616,7 +703,11 @@
             }
 
             .gallery-item {
-                height: 200px;
+                height: 220px;
+            }
+
+            .form-container {
+                padding: 2rem;
             }
         }
     </style>
@@ -650,6 +741,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#booking">Book Now</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="tel:+971561547641" class="btn btn-primary">Call Now</a></li>
             </ul>
@@ -662,11 +754,11 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Premium Bus and Coaster Bus Service</h1>
-            <p>We have a fleet of modern buses that make your journey comfortable and safe. The best solution for group transport.</p>
+            <h1>Premium Bus & Coaster Bus Service</h1>
+            <p>Modern Fleet • Comfortable Rides • Safe Travel • Professional Drivers</p>
             <div>
-                <a href="https://wa.me/971561547641?text=Hi,%20I%20want%20to%20book%20a%20bus%20service" class="btn btn-primary" target="_blank">Book Now</a>
-                <a href="#services" class="btn">Our Services</a>
+                <a href="#booking" class="btn btn-primary">Book Your Ride</a>
+                <a href="#services" class="btn">Explore Services</a>
             </div>
         </div>
     </section>
@@ -674,55 +766,98 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-title">
-            <h2>Our Bus Services</h2>
-            <p>The best solution for group transport with our wide range of buses and coaster buses</p>
+            <h2>Our Premium Services</h2>
+            <p>Choose from our wide range of modern buses for all your transportation needs</p>
         </div>
         <div class="service-cards">
             <div class="service-card">
                 <div class="service-img" id="busImage1">
-                    Bus Image #1
+                    <i class="fas fa-bus fa-3x"></i>
                 </div>
                 <div class="service-price">50-100 Passengers</div>
                 <div class="service-content">
                     <h3>Large Bus Service</h3>
-                    <p>Comfortable and spacious bus service for large groups. Ideal for educational trips, company outings, and large events.</p>
+                    <p>Perfect for large groups, corporate events, school trips, and weddings. Our spacious buses ensure comfortable travel for everyone.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Capacity: 50-100 passengers</li>
-                        <li><i class="fas fa-check"></i> Air Conditioned</li>
-                        <li><i class="fas fa-check"></i> LCD Screen</li>
-                        <li><i class="fas fa-check"></i> Professional Driver</li>
+                        <li><i class="fas fa-check"></i> Air Conditioned Comfort</li>
+                        <li><i class="fas fa-check"></i> Entertainment System</li>
+                        <li><i class="fas fa-check"></i> Professional Drivers</li>
+                        <li><i class="fas fa-check"></i> GPS Tracking</li>
                     </ul>
-                    <a href="https://wa.me/971561547641?text=Hi,%20I%20want%20to%20book%20Large%20Bus%20Service" class="btn btn-primary" target="_blank">Book Now</a>
+                    <a href="#booking" class="btn btn-primary">Book This Service</a>
                 </div>
             </div>
             
             <div class="service-card">
                 <div class="service-img" id="busImage2">
-                    Coaster Bus Image #2
+                    <i class="fas fa-shuttle-van fa-3x"></i>
                 </div>
                 <div class="service-price">25-40 Passengers</div>
                 <div class="service-content">
                     <h3>Coaster Bus Service</h3>
-                    <p>Coaster bus service for small and medium groups. Perfect for family trips, small events and corporate transport.</p>
+                    <p>Ideal for medium-sized groups, family trips, airport transfers, and corporate shuttle services.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Capacity: 25-40 passengers</li>
                         <li><i class="fas fa-check"></i> Modern Air Conditioning</li>
                         <li><i class="fas fa-check"></i> Music System</li>
-                        <li><i class="fas fa-check"></i> Experienced Driver</li>
+                        <li><i class="fas fa-check"></i> Experienced Drivers</li>
+                        <li><i class="fas fa-check"></i> Comfortable Seating</li>
                     </ul>
-                    <a href="https://wa.me/971561547641?text=Hi,%20I%20want%20to%20book%20Coaster%20Bus%20Service" class="btn btn-primary" target="_blank">Book Now</a>
+                    <a href="#booking" class="btn btn-primary">Book This Service</a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Image Upload Section -->
-        <div class="upload-section">
-            <h3>Upload Your Bus Images</h3>
-            <p>Click the buttons below to upload images of your buses:</p>
-            <div>
-                <button class="upload-btn" onclick="uploadImage('busImage1')">Upload Bus Image #1</button>
-                <button class="upload-btn" onclick="uploadImage('busImage2')">Upload Coaster Bus Image #2</button>
-            </div>
+    <!-- Booking Form Section -->
+    <section class="booking-form" id="booking">
+        <div class="section-title">
+            <h2>Book Your Bus</h2>
+            <p>Fill out the form below and we'll contact you within 30 minutes</p>
+        </div>
+        <div class="form-container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email address">
+                </div>
+                <div class="form-group">
+                    <label for="serviceType">Service Type</label>
+                    <select id="serviceType" required>
+                        <option value="">Select Service Type</option>
+                        <option value="large-bus">Large Bus (50-100 passengers)</option>
+                        <option value="coaster-bus">Coaster Bus (25-40 passengers)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pickup">Pickup Location</label>
+                    <input type="text" id="pickup" placeholder="Enter pickup address" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" placeholder="Enter destination address" required>
+                </div>
+                <div class="form-group">
+                    <label for="datetime">Date & Time</label>
+                    <input type="datetime-local" id="datetime" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Requirements</label>
+                    <textarea id="message" placeholder="Any special requirements or notes..." rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px;">
+                    <i class="fas fa-paper-plane"></i> Submit Booking Request
+                </button>
+            </form>
         </div>
     </section>
 
@@ -730,28 +865,28 @@
     <section class="gallery" id="gallery">
         <div class="section-title">
             <h2>Our Bus Fleet</h2>
-            <p>Collection of our modern and clean buses</p>
+            <p>Explore our modern and well-maintained bus collection</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
                 <div class="upload-placeholder">
-                    <i class="fas fa-bus"></i>
-                    <p>Bus Image #1</p>
-                    <small>Click to upload</small>
+                    <i class="fas fa-bus fa-3x"></i>
+                    <p>Large Bus Interior</p>
+                    <small>Click to upload image</small>
                 </div>
             </div>
             <div class="gallery-item">
                 <div class="upload-placeholder">
-                    <i class="fas fa-bus-alt"></i>
-                    <p>Bus Image #2</p>
-                    <small>Click to upload</small>
+                    <i class="fas fa-shuttle-van fa-3x"></i>
+                    <p>Coaster Bus</p>
+                    <small>Click to upload image</small>
                 </div>
             </div>
             <div class="gallery-item">
                 <div class="upload-placeholder">
-                    <i class="fas fa-shuttle-van"></i>
-                    <p>Coaster Bus Image</p>
-                    <small>Click to upload</small>
+                    <i class="fas fa-couch fa-3x"></i>
+                    <p>Comfortable Seating</p>
+                    <small>Click to upload image</small>
                 </div>
             </div>
         </div>
@@ -761,28 +896,28 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-title">
             <h2>How It Works</h2>
-            <p>Easy way to use our bus service</p>
+            <p>Simple steps to book your perfect ride</p>
         </div>
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Call or Message</h3>
-                <p>Contact us by phone or WhatsApp</p>
+                <h3>Contact Us</h3>
+                <p>Call, WhatsApp, or fill out our booking form with your requirements</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Choose Bus</h3>
-                <p>Select bus size according to your needs</p>
+                <h3>Choose Your Bus</h3>
+                <p>Select the perfect bus size based on your group and needs</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Confirm Booking</h3>
-                <p>Provide pickup location, destination and time</p>
+                <h3>Confirm Details</h3>
+                <p>Provide pickup location, destination, date, and time</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <h3>Enjoy Your Ride</h3>
-                <p>Sit back and travel safely</p>
+                <p>Relax while we take care of your comfortable and safe journey</p>
             </div>
         </div>
     </section>
@@ -791,26 +926,26 @@
     <section class="contact-info" id="contact">
         <div class="section-title">
             <h2>Contact Our Team</h2>
-            <p>Contact our professional team for bookings and inquiries</p>
+            <p>Get in touch with our professional team for bookings and inquiries</p>
         </div>
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>Owner</h3>
+                <h3>Owner & Manager</h3>
                 <p><strong>Nazir Ullah</strong></p>
                 <p class="phone"><i class="fas fa-phone"></i> 056 154 7641</p>
                 <p>Overall management and business inquiries</p>
             </div>
             <div class="contact-card">
-                <h3>Manager</h3>
+                <h3>Operations Manager</h3>
                 <p><strong>Asif Ullah</strong></p>
                 <p class="phone"><i class="fas fa-phone"></i> 052 526 4818</p>
-                <p>Operations and customer service</p>
+                <p>Daily operations and customer service</p>
             </div>
             <div class="contact-card">
-                <h3>Drivers Incharge</h3>
+                <h3>Fleet Manager</h3>
                 <p><strong>Muhammad Saleem</strong></p>
                 <p class="phone"><i class="fas fa-phone"></i> 058 988 4481</p>
-                <p>Fleet management and driver coordination</p>
+                <p>Bus coordination and driver management</p>
             </div>
             <div class="contact-card">
                 <h3>Maintenance & Support</h3>
@@ -821,7 +956,7 @@
             <div class="contact-card">
                 <h3>Our Location</h3>
                 <p><strong>Al Ain Al Noud Sharikat</strong></p>
-                <p><i class="fas fa-map-marker-alt"></i> Main Office</p>
+                <p><i class="fas fa-map-marker-alt"></i> Main Office & Garage</p>
                 <p><i class="fas fa-globe"></i> Serving all UAE areas</p>
             </div>
         </div>
@@ -832,7 +967,7 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Flash Ride Bus Transport</h3>
-                <p>Premium bus and coaster bus services. Modern fleet and professional drivers. Your comfort and safety is our priority.</p>
+                <p>Your trusted partner for premium bus and coaster bus services in UAE. Modern fleet, professional drivers, and unmatched comfort.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -843,37 +978,37 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-bus"></i> Services</a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#booking"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Our Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Large Bus Service</a></li>
-                    <li><a href="#">Coaster Bus Service</a></li>
-                    <li><a href="#">Group Transport</a></li>
-                    <li><a href="#">Airport Transfer</a></li>
-                    <li><a href="#">Corporate Transport</a></li>
+                    <li><a href="#services"><i class="fas fa-check"></i> Large Bus Service</a></li>
+                    <li><a href="#services"><i class="fas fa-check"></i> Coaster Bus Service</a></li>
+                    <li><a href="#services"><i class="fas fa-check"></i> Group Transport</a></li>
+                    <li><a href="#services"><i class="fas fa-check"></i> Airport Transfer</a></li>
+                    <li><a href="#services"><i class="fas fa-check"></i> Corporate Transport</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Contact Information</h3>
+                <h3>Contact Info</h3>
                 <ul class="footer-links">
                     <li><i class="fas fa-user"></i> Nazir Ullah - 056 154 7641</li>
                     <li><i class="fas fa-user-tie"></i> Asif Ullah - 052 526 4818</li>
                     <li><i class="fas fa-users"></i> Muhammad Saleem - 058 988 4481</li>
                     <li><i class="fas fa-tools"></i> Zain Ullah - 058 988 4480</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Location: Al Ain Al Noud Sharikat</li>
-                    <li><i class="fas fa-globe"></i> Service in all UAE areas</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Al Ain Al Noud Sharikat</li>
+                    <li><i class="fas fa-envelope"></i> flashtransport2025@gmail.com</li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 Flash Ride Bus Transport. All rights reserved. | Premium Bus Transport Services</p>
+            <p>&copy; 2024 Flash Ride Bus Transport. All rights reserved. | Premium Bus Transport Services Across UAE</p>
         </div>
     </footer>
 
@@ -907,10 +1042,10 @@
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
                 header.style.background = 'var(--secondary)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
             } else {
-                header.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'var(--gradient)';
+                header.style.boxShadow = '0 4px 20px rgba(30, 64, 175, 0.3)';
             }
         });
 
@@ -942,6 +1077,41 @@
                 uploadImage(elementId);
             });
         });
+
+        // Booking Form Handling
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                serviceType: document.getElementById('serviceType').value,
+                pickup: document.getElementById('pickup').value,
+                destination: document.getElementById('destination').value,
+                datetime: document.getElementById('datetime').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create WhatsApp message
+            const serviceName = formData.serviceType === 'large-bus' ? 'Large Bus (50-100 passengers)' : 'Coaster Bus (25-40 passengers)';
+            const whatsappMessage = `🚌 *New Bus Booking Request* 🚌%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Service:* ${serviceName}%0A*Pickup:* ${formData.pickup}%0A*Destination:* ${formData.destination}%0A*Date & Time:* ${formData.datetime}%0A*Message:* ${formData.message}%0A%0A*Sent via Flash Ride Website*`;
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/971561547641?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('🎉 Thank you! Your booking request has been submitted successfully. We will contact you within 30 minutes.');
+        });
+
+        // Set minimum datetime to current time
+        const datetimeInput = document.getElementById('datetime');
+        const now = new Date();
+        const localDateTime = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+        datetimeInput.min = localDateTime;
     </script>
 </body>
 </html>
